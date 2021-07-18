@@ -2,7 +2,13 @@ import * as React from "react";
 import { Admin, Resource } from "react-admin";
 import { fetchUtils } from "ra-core";
 import simpleRestProvider from "ra-data-simple-rest";
-import { WargaList, WargaEdit, WargaCreate } from "./components/Warga";
+import {
+  WargaList,
+  WargaEdit,
+  WargaCreate,
+  WargaShow,
+} from "./components/Warga";
+import PeopleIcon from "@material-ui/icons/People";
 
 const dataProvider = simpleRestProvider(
   "http://localhost:3000",
@@ -17,6 +23,9 @@ const App = () => (
       list={WargaList}
       edit={WargaEdit}
       create={WargaCreate}
+      show={WargaShow}
+      options={{ label: "Warga" }}
+      icon={PeopleIcon}
     />
   </Admin>
 );
