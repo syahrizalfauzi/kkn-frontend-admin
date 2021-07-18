@@ -12,6 +12,7 @@ import {
   SimpleShowLayout,
   DateInput,
   DateField,
+  required,
 } from "react-admin";
 import { wargaExporter } from "../exporters";
 
@@ -25,6 +26,7 @@ const perkawinanChoices = [
   { id: "Cerai Hidup", name: "Cerai Hidup" },
   { id: "Cerai Mati", name: "Cerai Mati" },
 ];
+const validator = [required()];
 
 export const WargaList = (props) => (
   <List {...props} title="Daftar Warga" exporter={wargaExporter}>
@@ -47,32 +49,36 @@ export const WargaList = (props) => (
 export const WargaEdit = (props) => (
   <Edit {...props} title="Ubah Data Warga">
     <SimpleForm>
-      <TextInput required source="nik" label="NIK" />
-      <TextInput required source="nama" />
-      <TextInput required source="jabatan" />
+      <TextInput validate={validator} source="nik" label="NIK" />
+      <TextInput validate={validator} source="nama" />
+      <TextInput validate={validator} source="jabatan" />
       <SelectInput
-        required
+        validate={validator}
         source="jenis_kelamin"
         choices={kelaminChoices}
         label="Jenis Kelamin"
       />
-      <TextInput required source="tempat_lahir" label="Tempat Lahir" />
+      <TextInput
+        validate={validator}
+        source="tempat_lahir"
+        label="Tempat Lahir"
+      />
       <DateInput
-        required
+        validate={validator}
         source="tanggal_lahir"
         label="Tanggal Lahir"
         options={{ format: "DD/MM/YYYY" }}
       />
       <SelectInput
-        required
+        validate={validator}
         source="status_perkawinan"
         choices={perkawinanChoices}
         label="Status Perkawinan"
       />
-      <TextInput required source="agama" />
-      <TextInput required source="alamat" />
-      <TextInput required source="pendidikan" />
-      <TextInput required source="pekerjaan" />
+      <TextInput validate={validator} source="agama" />
+      <TextInput validate={validator} source="alamat" />
+      <TextInput validate={validator} source="pendidikan" />
+      <TextInput validate={validator} source="pekerjaan" />
     </SimpleForm>
   </Edit>
 );
@@ -80,32 +86,36 @@ export const WargaEdit = (props) => (
 export const WargaCreate = (props) => (
   <Create {...props} title="Buat Data Warga">
     <SimpleForm>
-      <TextInput required source="nik" label="NIK" />
-      <TextInput required source="nama" />
-      <TextInput required source="jabatan" />
+      <TextInput validate={validator} source="nik" label="NIK" />
+      <TextInput validate={validator} source="nama" />
+      <TextInput validate={validator} source="jabatan" />
       <SelectInput
-        required
+        validate={validator}
         source="jenis_kelamin"
         choices={kelaminChoices}
         label="Jenis Kelamin"
       />
-      <TextInput required source="tempat_lahir" label="Tempat Lahir" />
+      <TextInput
+        validate={validator}
+        source="tempat_lahir"
+        label="Tempat Lahir"
+      />
       <DateInput
-        required
+        validate={validator}
         source="tanggal_lahir"
         label="Tanggal Lahir"
         options={{ format: "DD/MM/YYYY" }}
       />
       <SelectInput
-        required
+        validate={validator}
         source="status_perkawinan"
         choices={perkawinanChoices}
         label="Status Perkawinan"
       />
-      <TextInput required source="agama" />
-      <TextInput required source="alamat" />
-      <TextInput required source="pendidikan" />
-      <TextInput required source="pekerjaan" />
+      <TextInput validate={validator} source="agama" />
+      <TextInput validate={validator} source="alamat" />
+      <TextInput validate={validator} source="pendidikan" />
+      <TextInput validate={validator} source="pekerjaan" />
     </SimpleForm>
   </Create>
 );

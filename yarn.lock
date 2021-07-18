@@ -1148,6 +1148,13 @@ ra-language-english@^3.17.0:
   dependencies:
     ra-core "^3.17.0"
 
+ra-language-indonesian-new@^3.17.0:
+  version "3.17.0"
+  resolved "https://registry.yarnpkg.com/ra-language-indonesian-new/-/ra-language-indonesian-new-3.17.0.tgz#1b6d05e24ff13e0284cf3aaf88b58fc45a6d10c6"
+  integrity sha512-tfySz+y0MJ8MXLj3MP4ifBDlMVXy70zSFEfgAkl5acXVxcOOrnu98EuXT8BM1MGKPXXeLe3tbmQNNzdNNpCJNw==
+  dependencies:
+    ra-core "^3.17.0"
+
 ra-ui-materialui@3.15.0, ra-ui-materialui@^3.17.0:
   version "3.15.0"
   resolved "https://registry.yarnpkg.com/ra-ui-materialui/-/ra-ui-materialui-3.15.0.tgz#d18e564b95721ade84d5513751b4f299ffeb7861"
