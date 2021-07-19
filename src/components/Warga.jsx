@@ -14,7 +14,7 @@ import {
   DateField,
   required,
 } from "react-admin";
-import { wargaExporter } from "../exporters";
+import wargaExporter from "../utils/exporters/wargaExporter";
 
 const kelaminChoices = [
   { id: "Pria", name: "Pria" },

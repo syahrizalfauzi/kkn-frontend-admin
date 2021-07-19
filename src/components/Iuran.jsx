@@ -17,7 +17,7 @@ import {
   BooleanInput,
   required,
 } from "react-admin";
-import { iuranExporter } from "../exporters";
+import iuranExporter from "../utils/exporters/iuranExporter";
 
 const validator = [required()];
 
