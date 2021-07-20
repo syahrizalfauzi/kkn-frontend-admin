@@ -15,11 +15,9 @@ import {
   NumberInput,
   BooleanField,
   BooleanInput,
-  required,
 } from "react-admin";
+import { numberValidator, requiredValidator } from '../utils/validators';
 import iuranExporter from "../utils/exporters/iuranExporter";
-
-const validator = [required()];
 
 export const IuranList = (props) => (
   <List {...props} title="Daftar Iuran" exporter={iuranExporter}>
@@ -38,12 +36,12 @@ export const IuranList = (props) => (
 export const IuranEdit = (props) => (
   <Edit {...props} title="Ubah Data Iuran">
     <SimpleForm>
-      <TextInput validate={validator} source="nik" label="NIK" />
-      <TextInput validate={validator} source="nama" />
-      <TextInput validate={validator} source="nama_iuran" label="Nama Iuran" />
-      <NumberInput validate={validator} source="nominal" />
+      <NumberInput validate={numberValidator} source="nik" label="NIK" />
+      <TextInput validate={requiredValidator} source="nama" />
+      <TextInput validate={requiredValidator} source="nama_iuran" label="Nama Iuran" />
+      <NumberInput validate={numberValidator} source="nominal" />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal"
         options={{ format: "DD/MM/YYYY" }}
       />
@@ -60,12 +58,12 @@ export const IuranEdit = (props) => (
 export const IuranCreate = (props) => (
   <Create {...props} title="Buat Data Iuran">
     <SimpleForm>
-      <TextInput validate={validator} source="nik" label="NIK" />
-      <TextInput validate={validator} source="nama" />
-      <TextInput validate={validator} source="nama_iuran" label="Nama Iuran" />
-      <NumberInput validate={validator} source="nominal" />
+      <NumberInput validate={numberValidator} source="nik" label="NIK" />
+      <TextInput validate={requiredValidator} source="nama" />
+      <TextInput validate={requiredValidator} source="nama_iuran" label="Nama Iuran" />
+      <NumberInput validate={numberValidator} source="nominal" />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal"
         options={{ format: "DD/MM/YYYY" }}
       />

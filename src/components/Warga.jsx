@@ -12,8 +12,9 @@ import {
   SimpleShowLayout,
   DateInput,
   DateField,
-  required,
+  NumberInput,
 } from "react-admin";
+import { numberValidator, requiredValidator } from '../utils/validators';
 import wargaExporter from "../utils/exporters/wargaExporter";
 
 const kelaminChoices = [
@@ -26,7 +27,7 @@ const perkawinanChoices = [
   { id: "Cerai Hidup", name: "Cerai Hidup" },
   { id: "Cerai Mati", name: "Cerai Mati" },
 ];
-const validator = [required()];
+
 
 export const WargaList = (props) => (
   <List {...props} title="Daftar Warga" exporter={wargaExporter}>
@@ -49,36 +50,36 @@ export const WargaList = (props) => (
 export const WargaEdit = (props) => (
   <Edit {...props} title="Ubah Data Warga">
     <SimpleForm>
-      <TextInput validate={validator} source="nik" label="NIK" />
-      <TextInput validate={validator} source="nama" />
-      <TextInput validate={validator} source="jabatan" />
+      <NumberInput validate={numberValidator} source="nik" label="NIK" />
+      <TextInput validate={requiredValidator} source="nama" />
+      <TextInput validate={requiredValidator} source="jabatan" />
       <SelectInput
-        validate={validator}
+        validate={requiredValidator}
         source="jenis_kelamin"
         choices={kelaminChoices}
         label="Jenis Kelamin"
       />
       <TextInput
-        validate={validator}
+        validate={requiredValidator}
         source="tempat_lahir"
         label="Tempat Lahir"
       />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal_lahir"
         label="Tanggal Lahir"
         options={{ format: "DD/MM/YYYY" }}
       />
       <SelectInput
-        validate={validator}
+        validate={requiredValidator}
         source="status_perkawinan"
         choices={perkawinanChoices}
         label="Status Perkawinan"
       />
-      <TextInput validate={validator} source="agama" />
-      <TextInput validate={validator} source="alamat" />
-      <TextInput validate={validator} source="pendidikan" />
-      <TextInput validate={validator} source="pekerjaan" />
+      <TextInput validate={requiredValidator} source="agama" />
+      <TextInput validate={requiredValidator} source="alamat" />
+      <TextInput validate={requiredValidator} source="pendidikan" />
+      <TextInput validate={requiredValidator} source="pekerjaan" />
     </SimpleForm>
   </Edit>
 );
@@ -86,36 +87,36 @@ export const WargaEdit = (props) => (
 export const WargaCreate = (props) => (
   <Create {...props} title="Buat Data Warga">
     <SimpleForm>
-      <TextInput validate={validator} source="nik" label="NIK" />
-      <TextInput validate={validator} source="nama" />
-      <TextInput validate={validator} source="jabatan" />
+      <NumberInput validate={numberValidator} source="nik" label="NIK" />
+      <TextInput validate={requiredValidator} source="nama" />
+      <TextInput validate={requiredValidator} source="jabatan" />
       <SelectInput
-        validate={validator}
+        validate={requiredValidator}
         source="jenis_kelamin"
         choices={kelaminChoices}
         label="Jenis Kelamin"
       />
       <TextInput
-        validate={validator}
+        validate={requiredValidator}
         source="tempat_lahir"
         label="Tempat Lahir"
       />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal_lahir"
         label="Tanggal Lahir"
         options={{ format: "DD/MM/YYYY" }}
       />
       <SelectInput
-        validate={validator}
+        validate={requiredValidator}
         source="status_perkawinan"
         choices={perkawinanChoices}
         label="Status Perkawinan"
       />
-      <TextInput validate={validator} source="agama" />
-      <TextInput validate={validator} source="alamat" />
-      <TextInput validate={validator} source="pendidikan" />
-      <TextInput validate={validator} source="pekerjaan" />
+      <TextInput validate={requiredValidator} source="agama" />
+      <TextInput validate={requiredValidator} source="alamat" />
+      <TextInput validate={requiredValidator} source="pendidikan" />
+      <TextInput validate={requiredValidator} source="pekerjaan" />
     </SimpleForm>
   </Create>
 );

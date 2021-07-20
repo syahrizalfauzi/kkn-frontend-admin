@@ -11,11 +11,9 @@ import {
   SimpleShowLayout,
   DateInput,
   DateField,
-  required,
 } from "react-admin";
+import { requiredValidator } from '../utils/validators';
 import kejadianExporter from "../utils/exporters/kejadianExporter";
-
-const validator = [required()];
 
 export const KejadianList = (props) => (
   <List {...props} title="Daftar Kejadian" exporter={kejadianExporter}>
@@ -30,10 +28,10 @@ export const KejadianList = (props) => (
 export const KejadianEdit = (props) => (
   <Edit {...props} title="Ubah Data Kejadian">
     <SimpleForm>
-      <TextInput validate={validator} source="nama" />
-      <TextInput validate={validator} source="deskripsi" />
+      <TextInput validate={requiredValidator} source="nama" />
+      <TextInput validate={requiredValidator} source="deskripsi" />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal"
         options={{ format: "DD/MM/YYYY" }}
       />
@@ -44,10 +42,10 @@ export const KejadianEdit = (props) => (
 export const KejadianCreate = (props) => (
   <Create {...props} title="Buat Data Kejadian">
     <SimpleForm>
-      <TextInput validate={validator} source="nama" />
-      <TextInput validate={validator} source="deskripsi" />
+      <TextInput validate={requiredValidator} source="nama" />
+      <TextInput validate={requiredValidator} source="deskripsi" />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal"
         options={{ format: "DD/MM/YYYY" }}
       />

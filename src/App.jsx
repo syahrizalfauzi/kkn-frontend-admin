@@ -28,10 +28,17 @@ import {
   KejadianCreate,
   KejadianShow,
 } from "./components/Kejadian";
+import {
+  KasList,
+  KasEdit,
+  KasCreate,
+  KasShow,
+} from "./components/Kas";
 import WargaIcon from "@material-ui/icons/People";
 import IuranIcon from "@material-ui/icons/AttachMoney";
 import SuratIcon from "@material-ui/icons/Mail";
 import KejadianIcon from "@material-ui/icons/Event";
+import KasIcon from '@material-ui/icons/Book';
 
 const i18nProvider = polyglotI18nProvider(() => indonesianMessages, "id");
 
@@ -78,6 +85,15 @@ const App = () => (
       show={KejadianShow}
       options={{ label: "Kejadian" }}
       icon={KejadianIcon}
+    />
+    <Resource
+      name="daftar_kas"
+      list={KasList}
+      edit={KasEdit}
+      create={KasCreate}
+      show={KasShow}
+      options={{ label: "Kas" }}
+      icon={KasIcon}
     />
   </Admin>
 );

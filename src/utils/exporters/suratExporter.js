@@ -8,7 +8,7 @@ export default (records) => {
     const date = moment(tanggal).format("DD/MM/YYYY");
 
     return {
-      "No.": no.toString(),
+      "No.": no,
       Perihal: perihal,
       Isi: isi,
       Tanggal: date,

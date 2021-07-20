@@ -11,11 +11,10 @@ import {
   SimpleShowLayout,
   DateInput,
   DateField,
-  required,
+  NumberInput,
 } from "react-admin";
+import { numberValidator, requiredValidator } from '../utils/validators';
 import suratExporter from "../utils/exporters/suratExporter";
-
-const validator = [required()];
 
 export const SuratList = (props) => (
   <List {...props} title="Daftar Surat" exporter={suratExporter}>
@@ -33,15 +32,15 @@ export const SuratList = (props) => (
 export const SuratEdit = (props) => (
   <Edit {...props} title="Ubah Data Surat">
     <SimpleForm>
-      <TextInput validate={validator} source="no" label="No." />
-      <TextInput validate={validator} source="perihal" />
-      <TextInput validate={validator} source="isi" />
+      <NumberInput validate={numberValidator} source="no" label="No." />
+      <TextInput validate={requiredValidator} source="perihal" />
+      <TextInput validate={requiredValidator} source="isi" multiline />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal"
         options={{ format: "DD/MM/YYYY" }}
       />
-      <TextInput validate={validator} source="pengirim" />
+      <TextInput validate={requiredValidator} source="pengirim" />
       <TextInput source="keterangan" multiline />
     </SimpleForm>
   </Edit>
@@ -50,15 +49,15 @@ export const SuratEdit = (props) => (
 export const SuratCreate = (props) => (
   <Create {...props} title="Buat Data Surat">
     <SimpleForm>
-      <TextInput validate={validator} source="no" label="No." />
-      <TextInput validate={validator} source="perihal" />
-      <TextInput validate={validator} source="isi" />
+      <NumberInput validate={numberValidator} source="no" label="No." />
+      <TextInput validate={requiredValidator} source="perihal" />
+      <TextInput validate={requiredValidator} source="isi" multiline />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal"
         options={{ format: "DD/MM/YYYY" }}
       />
-      <TextInput validate={validator} source="pengirim" />
+      <TextInput validate={requiredValidator} source="pengirim" />
       <TextInput source="keterangan" multiline />
     </SimpleForm>
   </Create>

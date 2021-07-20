@@ -13,11 +13,9 @@ import {
   DateField,
   NumberField,
   NumberInput,
-  required,
-} from "react-admin";
+} from "react-numberValidator";
+import { numberValidator, requiredValidator } from '../utils/validators';
 import kegiatanExporter from "../utils/exporters/kegiatanExporter";
-
-const validator = [required()];
 
 export const KegiatanList = (props) => (
   <List {...props} title="Daftar Kegiatan" exporter={kegiatanExporter}>
@@ -34,16 +32,16 @@ export const KegiatanList = (props) => (
 export const KegiatanEdit = (props) => (
   <Edit {...props} title="Ubah Data Kegiatan">
     <SimpleForm>
-      <TextInput validate={validator} source="nama" />
-      <TextInput validate={validator} source="deskripsi" />
+      <TextInput validate={requiredValidator} source="nama" />
+      <TextInput validate={requiredValidator} source="deskripsi" />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal"
         options={{ format: "DD/MM/YYYY" }}
       />
-      <TextInput validate={validator} source="tempat" />
+      <TextInput validate={requiredValidator} source="tempat" />
       <NumberInput
-        validate={validator}
+        validate={numberValidator}
         source="jumlah_peserta"
         label="Jumlah Peserta"
       />
@@ -54,16 +52,16 @@ export const KegiatanEdit = (props) => (
 export const KegiatanCreate = (props) => (
   <Create {...props} title="Buat Data Kegiatan">
     <SimpleForm>
-      <TextInput validate={validator} source="nama" />
-      <TextInput validate={validator} source="deskripsi" />
+      <TextInput validate={requiredValidator} source="nama" />
+      <TextInput validate={requiredValidator} source="deskripsi" />
       <DateInput
-        validate={validator}
+        validate={requiredValidator}
         source="tanggal"
         options={{ format: "DD/MM/YYYY" }}
       />
-      <TextInput validate={validator} source="tempat" />
+      <TextInput validate={requiredValidator} source="tempat" />
       <NumberInput
-        validate={validator}
+        validate={numberValidator}
         source="jumlah_peserta"
         label="Jumlah Peserta"
       />
