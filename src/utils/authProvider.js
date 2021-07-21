@@ -1,5 +1,6 @@
 // "https://kkn-backend.et.r.appspot.com/",
-export const apiUrl = "http://localhost:8080";
+export const apiUrl = "https://kkn-backend.et.r.appspot.com/";
+// export const apiUrl = "http://localhost:8080";
 
 export const authProvider = {
   login: ({ username, password }) => {
@@ -54,7 +55,6 @@ export const authProvider = {
       return Promise.reject(error);
     }
   },
-  // authorization
   getPermissions: () => {
     return Promise.resolve({ allowed: true });
   },

@@ -23,8 +23,8 @@ export const KasList = (props) => (
       <TextField source="no" label="No." />
       <DateField source="tanggal" locales="id-ID" />
       <TextField source="ref" />
-      <NumberField source="debit" label="Pengeluaran" />
-      <NumberField source="kredit" label="Pemasukan" />
+      <NumberField source="debit" label="Pemasukan" />
+      <NumberField source="kredit" label="Pengeluaran" />
       <TextField source="rincian" />
     </Datagrid>
   </List>
@@ -40,8 +40,8 @@ export const KasEdit = (props) => (
         options={{ format: "DD/MM/YYYY" }}
       />
       <TextInput validate={requiredValidator} source="ref" />
-      <NumberInput validate={numberValidator} source="debit" label="Pengeluaran" defaultValue={0} />
-      <NumberInput validate={numberValidator} source="kredit" label="Pemasukan" defaultValue={0} />
+      <NumberInput validate={numberValidator} source="debit" label="Pemasukan" defaultValue={0} />
+      <NumberInput validate={numberValidator} source="kredit" label="Pengeluaran" defaultValue={0} />
       <TextInput source="rincian" multiline />
     </SimpleForm>
   </Edit>
@@ -57,8 +57,8 @@ export const KasCreate = (props) => (
         options={{ format: "DD/MM/YYYY" }}
       />
       <TextInput validate={requiredValidator} source="ref" />
-      <NumberInput validate={numberValidator} source="debit" label="Pengeluaran" defaultValue={0} />
-      <NumberInput validate={numberValidator} source="kredit" label="Pemasukan" defaultValue={0} />
+      <NumberInput validate={numberValidator} source="debit" label="Pemasukan" defaultValue={0} />
+      <NumberInput validate={numberValidator} source="kredit" label="Pengeluaran" defaultValue={0} />
       <TextInput source="rincian" multiline />
     </SimpleForm>
   </Create>
@@ -70,8 +70,8 @@ export const KasShow = (props) => (
       <TextField source="no" label="No." />
       <DateField source="tanggal" locales="id-ID" />
       <TextField source="ref" />
-      <NumberField source="debit" label="Pengeluaran" />
-      <NumberField source="kredit" label="Pemasukan" />
+      <NumberField source="debit" label="Pemasukan" />
+      <NumberField source="kredit" label="Pengeluaran" />
       <TextField source="rincian" />
     </SimpleShowLayout>
   </Show>
