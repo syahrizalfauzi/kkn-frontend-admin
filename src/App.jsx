@@ -39,17 +39,27 @@ import IuranIcon from "@material-ui/icons/AttachMoney";
 import SuratIcon from "@material-ui/icons/Mail";
 import KejadianIcon from "@material-ui/icons/Event";
 import KasIcon from '@material-ui/icons/Book';
+import { apiUrl, authProvider } from "./utils/authProvider";
 
 const i18nProvider = polyglotI18nProvider(() => indonesianMessages, "id");
 
+const httpClient = (url, options = {}) => {
+    if (!options.headers) {
+        options.headers = new Headers({ Accept: 'application/json' });
+    }
+    const { token } = JSON.parse(localStorage.getItem('auth'));
+    options.headers.set('Authorization', `Bearer ${token}`);
+    return fetchUtils.fetchJson(url, options);
+};
+
 const dataProvider = simpleRestProvider(
-  "http://localhost:3000",
-  fetchUtils.fetchJson,
+  apiUrl,
+  httpClient,
   "X-Total-Count"
 );
 
 const App = () => (
-  <Admin dataProvider={dataProvider} i18nProvider={i18nProvider}>
+  <Admin dataProvider={dataProvider} authProvider={authProvider} i18nProvider={i18nProvider}>
     <Resource
       name="daftar_warga"
       list={WargaList}

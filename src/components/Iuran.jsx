@@ -27,7 +27,7 @@ export const IuranList = (props) => (
       <TextField source="nama_iuran" />
       <NumberField source="nominal" />
       <DateField source="tanggal" locales="id-ID" />
-      <BooleanField source="status" />
+      <BooleanField source="status" label="Lunas?" />
       <TextField source="keterangan" />
     </Datagrid>
   </List>
@@ -47,7 +47,7 @@ export const IuranEdit = (props) => (
       />
       <BooleanInput
         source="status"
-        label="Status Pembayaran"
+        label="Status Lunas"
         defaultValue={false}
       />
       <TextInput source="keterangan" multiline />
@@ -69,7 +69,7 @@ export const IuranCreate = (props) => (
       />
       <BooleanInput
         source="status"
-        label="Status Pembayaran"
+        label="Status Lunas"
         defaultValue={false}
       />
       <TextInput source="keterangan" multiline />
@@ -85,7 +85,7 @@ export const IuranShow = (props) => (
       <TextField source="nama_iuran" />
       <NumberField source="nominal" />
       <DateField source="tanggal" locales="id-ID" />
-      <BooleanField source="status" />
+      <BooleanField source="status" label="Lunas?" />
       <TextField source="keterangan" />
     </SimpleShowLayout>
   </Show>
